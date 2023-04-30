@@ -1,0 +1,10 @@
+.wrap{
+  background-color: #101010;
+  height: 60px;
+  text-align: center;
+}
+
+.wrap img{
+  width: 100px;
+  padding-top:1px;
+}

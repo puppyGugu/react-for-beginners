@@ -9,6 +9,7 @@
 
 import { Routes, Route } from "react-router-dom";
 
+import Header from "./components/Header";
 import Home from "./routes/Home";
 import Detail from "./routes/Detail";
 
@@ -208,13 +209,17 @@ import Detail from "./routes/Detail";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/hello" element={
-        <h1>Hello</h1>
-      }/>
-      <Route path="/movie/:id" element={<Detail/>}/>
-      <Route path="/" element={<Home/>}/>
-    </Routes>
+    <>
+      <Header/>
+        <Routes>
+          <Route path="/hello" element={
+            <h1>Hello</h1>
+          }/>
+          <Route path="/movie/:id" element={<Detail/>}/>
+          <Route path="/" element={<Home/>}/>
+          {/* <Route path={`${process.env.PUBLIC_URL}/`} element={<Home/>}/> */}
+        </Routes>
+    </>
   );
 }
 
