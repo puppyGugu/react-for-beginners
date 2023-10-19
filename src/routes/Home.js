@@ -11,19 +11,17 @@ function Home() {
             `https://yts.mx/api/v2/list_movies/json?minimum_ration=8.8&sort_by=year`
             )
         ).json();
-        // setMovies(json.data.movies);
-
-        // json 첫번째 데이터 img 엑박 제외 처리
-        const firstDelete = json.data.movies;
-        firstDelete.shift()
-        setMovies(firstDelete);
-
+        // console.log(json.data.movies);
+        const data = json.data.movies
+        
+        // json 데이터 img 엑박 제외 처리
+        const dataFilter = data.filter(item => item.title !== 'Mephistopheles')
+        setMovies(dataFilter);
         setLoading(false);
     };
     useEffect(() => {
         getMovies()
     }, []);
-    // movies.shift()
 
     return (
         <div className={styles.container}>
